@@ -6,7 +6,7 @@ import math
 
 print("CALCULADORA DO PESO IDEAL \n")
 
-altura = int(input("Digite a tua altura em metros \n Altura = "))
+altura = float(input("Digite a tua altura em metros \n Altura = "))
 
 
 peso = (72.7 * altura) - 58

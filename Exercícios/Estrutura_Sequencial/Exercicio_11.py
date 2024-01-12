@@ -19,3 +19,4 @@ calc_B = round(calc_2, 2)
 calc_C = round(calc_3, 2)
 
 print(f"Soluções: \n A) {calc_A} \n B) {calc_B} \n C) {calc_C}")
+

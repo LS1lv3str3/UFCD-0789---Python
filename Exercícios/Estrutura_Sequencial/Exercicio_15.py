@@ -21,8 +21,6 @@ Faça um programa que nos dê:
 
 '''
 
-import math
-
 numero_Horas = float(input("Quantas horas trabalhaste este mes? \n Horas trabalhadas = "))
 valor_Hora = float(input("Qual o teu valor por hora? \n Valor por Horas = "))
 
