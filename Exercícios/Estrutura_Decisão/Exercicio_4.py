@@ -6,7 +6,7 @@ letra = input("Introduz uma letra: ")
 
 vogais = ["a", "e", "i", "o", "u"]
 
-if letra in vogais or vogais.upper:
+if letra in vogais:
     print(f"A letra {letra} é uma Vogal")
 else:
     print(f"A letra {letra} é uma Consoante.")
