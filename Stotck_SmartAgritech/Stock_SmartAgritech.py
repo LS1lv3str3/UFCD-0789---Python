@@ -3,7 +3,9 @@ import pandas as pd
 # Função para realizar a verificação e atualização de stock
 def verificar_atualizar_stock():
     # Leitura dos dados das folhas do Excel
-    materiais_df = pd.read_excel('Base_Dados_SmartAgritech.xlsx', sheet_name='Materiais')
+    #materiais_df = pd.read_excel('Base_Dados_SmartAgritech.xlsx', sheet_name='Materiais')
+
+    materiais_df = pd.read_excel('C:\Stotck_SmartAgritech\Base_Dados_SmartAgritech.xlsx', sheet_name='Materiais')
 
     # Solicitar a quantidade a ser produzida
     quantidade_produzida = int(input("Digite a quantidade a ser produzida: "))
@@ -14,24 +16,27 @@ def verificar_atualizar_stock():
     # Verificação de stock e atualização
     materiais_sem_stock = verificar_stock(materiais_df)
 
-    # Passo 2: Exibir materiais_sem_stock antes da compra
-    print("Materiais sem stock antes da compra:")
-    print(materiais_sem_stock)
 
+    # Passo 2: Exibir materiais_sem_stock antes da compra
+    #print("Materiais sem stock antes da compra:")
+    #print(materiais_sem_stock)
+
+    
     # Apresentar a lista de materiais sem stock
     if not materiais_sem_stock.empty:
         print("Materiais sem stock:")
         print(materiais_sem_stock)
-        
+             
         # Solicitar compras ao usuário
         registrar_compras(materiais_sem_stock)
     else:
         print("Todos os materiais têm stock suficiente.")
 
+
     # Passo 3: Exibir materiais_sem_stock após a compra
-    materiais_sem_stock_apos_compra = verificar_stock(materiais_df)
-    print("Materiais sem stock após a compra:")
-    print(materiais_sem_stock_apos_compra)
+    #materiais_sem_stock_apos_compra = verificar_stock(materiais_df)
+    #print("Materiais sem stock após a compra:")
+    #print(materiais_sem_stock_apos_compra)
 
     # Solicitar confirmação do usuário para materiais opcionais
     confirmar_opcionais(materiais_df)
@@ -82,7 +87,7 @@ def atualizar_stock(materiais_df):
     materiais_df['Quantidade_Comprada'] = 0
 
     # Preencher NaN em Quantidade_Stock com zero para facilitar os cálculos
-    materiais_df['Quantidade_Stock'] = materiais_df['Quantidade_Stock'].fillna(0)
+    #materiais_df['Quantidade_Stock'] = materiais_df['Quantidade_Stock'].fillna(0)
 
     # Salvar as alterações no Excel
     materiais_df.to_excel('Base_Dados_SmartAgritech.xlsx', sheet_name='Materiais', index=False)
