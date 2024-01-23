@@ -11,17 +11,16 @@ O programa deverá pedir os valores de a, b e c e fazer as consistências, infor
 '''
 import math
 
-InputDoUtilizador = [
-    float(input("Digite o valor a:")),
-    float(input("Digite o valor b:")),
-    float(input("Digite o valor c:"))
-]
 
+InputDoUtilizador = [float(input("Introduza o 'a': "))]
+    
 if InputDoUtilizador[0] == 0:
-    print("A função não é uma equação de 2 grau")
-    
-    
-
+    print(f"{InputDoUtilizador[0]} é menor que 0 o programa vai encerrar")
+else:
+    InputDoUtilizador = [float(input("Introduza o 'b': ")), float(input("Introduza o 'c': "))]
+    InputDoUtilizador.extend(InputDoUtilizador)  
+  
+  
 def Calculo_Delta(valores):
     
     delta = valores[1]**2 + 4*valores[0]*valores[2]
@@ -44,5 +43,4 @@ def Calculo_Delta(valores):
     else:
         print("A solução não tem solução nos numeros Reais.")
 
-
-print(f"{Calculo_Delta(InputDoUtilizador)} são as soluções da tua função")     
+print(f"{Calculo_Delta(InputDoUtilizador)} são soluções da equação!" if InputDoUtilizador[0] != 0 else "")   
