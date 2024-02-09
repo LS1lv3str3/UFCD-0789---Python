@@ -7,25 +7,25 @@ O usuário deve ser capaz de informar:
 '''
 
 class TV:
-    def __init__(self, canal, volume:int = 0, power:int = 0):
-        self.power = power
+    def __init__(self, canal, volume:int = 0):
         self.canal = canal
         self.volume = volume
     
-    def ligarTV(self, change_power):
-        self.power = change_power
-    
-    def diminuir_volume(self, new_volume):
-        self.volume = new_volume
+    def new_volume(self, new_volume):
         
-    def aumentar_volume(self, new_volume):
-        self.volume = new_volume
+        if new_volume in range(0,26):
+            self.volume = new_volume
+            return print(f"Volume atualizado para {self.volume}")
+        else:
+            print("Introduziste um valor de volume invalido.")
+            
+    def new_canal(self,new_canal):
+        if new_canal in range(1,101):  
+            self.canal = new_canal
+            return print(f"Volume atualizado para {self.volume}")
+            
         
-    def aumentar_canal(self,new_canal):
-        self.canal = new_canal
 
-    def diminuir_canal(self,new_canal):
-        self.canal = new_canal
     
     
         

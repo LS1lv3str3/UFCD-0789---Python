@@ -22,9 +22,20 @@ class ContaCorrente:
         self.nome = novo_nome
         
     def deposito(self, deposito):
-        self.saldo += deposito
+        if deposito < 0:
+            print("Introduza um valor válido para deposito")
+        
+        if deposito > 0:
+            self.saldo += deposito
+            print(f"Depósito Autorizado.\nSaldo Atualizado --> {self.saldo}€")
     
     def levantamento(self, levantamento):
-        self.saldo -= levantamento
+        if levantamento <= self.saldo:
+            self.saldo -= levantamento
+            print(f"Levantamento Autorizado.\nSaldo Atualizado --> {self.saldo}€")
+        
+        else:
+            print(f"Tentativa de levantamento recusado.\nSaldo Atual --> {self.saldo}€")
+            
     
     
