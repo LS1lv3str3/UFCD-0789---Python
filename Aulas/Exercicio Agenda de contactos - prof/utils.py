@@ -15,3 +15,4 @@ class DataError(Exception):
         Log.add_error(self.__class__.__name__, msg)
                  
         super().__init__(msg)
+        

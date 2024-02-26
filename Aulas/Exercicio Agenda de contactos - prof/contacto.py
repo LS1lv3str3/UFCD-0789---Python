@@ -29,7 +29,3 @@ class Contacto:
         if morada is not None:
             self.__morada = morada
             
-
-a = Contacto("Lucas", "97098")
-
-print(a.get_info())

@@ -6,8 +6,9 @@ class Contactos:
         self.__email = email
         self.__dataNas = dataNas
     
-    def mostrarContacto (self):        
-        return [self.__nome, self.__telefone, self.__email, self.__dataNas]
+    def mostrarContacto (self):
+        listaContactos = [self.__nome, self.__telefone, self.__email, self.__dataNas]      
+        return listaContactos
     
     def editContacto(self, novo_nome:str = None, novo_telefone:str = None, email:str=None, dataNas = None):
         
@@ -23,10 +24,10 @@ class Contactos:
         if self.__dataNas is not None:
             self.__dataNas = dataNas
 
-    def addListaContacto(nome, telefone, email, dataNas):
+    def addListaContacto(self, nome, telefone, email, dataNas):
         
-        file = open("Lista De Contactos.csv", "a")
-        contacto = f"Nome: {nome}\nTelefone:{telefone}\nEmail: {email}\n Data Nascimento:{dataNas}"
+        file = open("Lista_De_Contactos.csv", "a")
+        contacto = f"{nome}\t{telefone}\t{email}\t{dataNas}"
         file.write(contacto + "\n")
         file.close()
        
